@@ -1,0 +1,59 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+
+<head><title>Carlypso</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+</head>
+
+
+<body >
+<div class = "container" ng-controller="AppCtrl">
+
+<div><H2>Carlypso</H2></div>
+<div class="input-group input-group-sm">
+  <span class="input-group-addon" id="sizing-addon3">Search</span>
+  <input type="text" class="form-control" ng-model="test" placeholder="model, color, price..."  aria-describedby="sizing-addon3">
+</div>
+
+
+<table class="table">
+<thead>
+	<tr>	
+	<th>Year</th>
+	<th>Make</th>
+	<th>Model</th>
+	<th>Price</th>
+	<th>Color</th>
+	<th>Mileage</th>
+	<th>Body</th>
+	<th>Trim</th>
+	<th>Condition</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+
+	<tr ng-repeat="car in carlist.value | filter: test |orderBy:'make'| limitTo:totalDisplayed">
+	<td>{{car.year}}</td>
+	<td>{{car.make}}</td>
+	<td>{{car.model}}</td>
+	<td>$ {{car.price}}</td>
+	<td>{{car.color}}</td>
+	<td>{{car.odometer}}</td>
+	<td>{{car.body}}</td>
+	<td>{{car.trim}}</td>
+	<td>{{car.condition}} Stars</td>
+	</tr>
+	</tbody>
+	</table>
+	<btn class="btn" ng-click="loadMore()">Load more</btn>
+	</div>
+
+</body>
+<script src="controller/controller.js"></script>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "carlypso",
+  "version": "1.0.0",
+  "description": "This applicication connects with API and gets JSON object and display listings.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Adnan Khan",
+  "license": "ISC"
+}
